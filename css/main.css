@@ -1,0 +1,506 @@
+.page-title entry-title{
+	
+}
+
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #ffffff;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+
+.main-header {
+	position: relative;
+}
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	z-index: 2;
+	transition: var(--transition);
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #5a5a5a;
+}
+
+@font-face {
+	font-family: "Oglavie Unicode"; 
+	src: url("./fonts/oglavieunicode.ttf"); 
+} 
+
+.title {
+	color: var(--text);
+	margin: 0;
+	padding: 0;
+	font-family: "Molodo-font";
+	font-weight: normal; 
+}
+
+.layers__title {
+	margin-top: -20%;
+	text-align: center;
+	color: white;
+	font-size: calc(var(--index) * 3.5);
+	letter-spacing: calc(var(--index) / 4.5);
+}
+
+@font-face {
+	font-family: "Molodo-font"; 
+	src: url("/fonts/Molodost.ttf"); 
+}
+
+.layers__caption {
+	font-family: "Molodo-font";
+	font-weight: normal; 
+	font-size: calc(var(--index) / 0.75);
+	letter-spacing: calc(var(--index) / 4.5);
+	width: 300px;
+}
+
+.main-article__content {
+	margin-bottom: -10%;
+}
+
+.main-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 200vh;
+	background-size: cover;
+	background-position:bottom;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: top;
+	position: relative;
+	text-align: center;
+	/* Update: */
+	top: -1px;
+	z-index: -1;
+}
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 2);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.main-article__paragraph {
+	text-shadow: -2px -2px 5px hsl(0, 0%, 0%);
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * 1);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.content {
+	will-change: transform;
+}
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 2.5);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}
+
+.middle_content {
+	position: relative;
+	z-index: 12;
+	background-size: cover;
+	background-position: bottom;
+	min-height: 175vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	flex-direction: row;
+	margin-bottom: -200px;
+}
+
+
+.all-card {
+	width: 70%;
+	min-width: 250px;
+	height: 90vh;
+	perspective: 1000px;
+}
+
+.card-inner {
+	width: 100%;
+	height: 90vh;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.all-card:hover .card-inner {
+	transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.card-front {
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-front h2 {
+	padding: 0;
+	margin: 0;
+	font-size: calc(var(--index) * 2.5);
+	font-family: "Molodo-font";
+	font-weight: normal;
+}
+
+.card-front p {
+	text-align: center;
+	font-weight: 100;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin: 10px 10px 10px 10px;
+}
+
+.card-back {
+	margin: 10px 10px 10px 10px;
+	background: rgba(0, 0, 0, 0.5);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transform: rotateY(180deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* Стили для основного подвала */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Стили для контента в подвале */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для ссылок в подвале */
+.footer {
+	position: relative;
+	background-color: #333;
+	width: 100%;
+	height: 35vh;
+}
+
+.footer-content {
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	display: flex 0 0 940px;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.footer-card {
+	margin: 10px;
+	position: relative;
+	width: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+/* ************************************* */
+.contact1 {
+	position: relative;
+	margin-top: -550px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	align-self: flex-start;
+	flex-direction: column;
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	min-height: 1000px;
+	z-index: 0;
+}
+
+@media screen and (max-width: 670px) {
+	.contact1 {
+		min-height: 1200px;
+	}
+
+	.contact2 {
+		min-height: 2000px;
+	}
+}
+
+.contact2 {
+	position: relative;
+	z-index: 5;
+	display: flex;
+	justify-content: start;
+	align-self: flex-start;
+	align-items: center;
+	flex-direction: column;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	min-height: 1100px;
+}
+
+.contact-wraper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#revers {
+	flex-direction: row-reverse;
+}
+
+.mouse-parallax {
+	width: 300px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card {
+	width: 300px;
+	margin: 10px;
+	align-items: center;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	text-shadow: 0 0 15px #000000;
+}
+
+#title-contact {
+	backdrop-filter: blur(3px);
+	border-width: 3px;
+	border-color: white;
+	border-style: solid;
+	border-radius: 30px;
+	padding: 10px;
+}
+
+.contact-card h2 {
+	text-align: center;
+	font-family: 'Molodo-font';
+	color: white;
+	font-weight: normal;
+	font-size: (4vh + 4vw)*4;
+}
+
+.card-caption {
+	text-align: center;
+	font-weight: lighter;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contact-card p {
+	text-align: center;
+	font-weight: bold;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: white;
+	font-size: var(--index);
+}
+
+.contact-card i {
+	text-align: center;
+	font-weight: bold;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: white;
+	font-size: var(--index)/2;
+}
+
+.mouse-parallax-bg {
+	width: 300;
+	height: 500px;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.1s ease;  
+}
+
+.map {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	transform: translateZ(0);
+	z-index: 0;
+	margin-top: -500px;
+	width: 100%;
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+}
+
+.title_map {
+	position: relative;
+	z-index: 20;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: normal;
+	font-family: 'Molodo-font';
+}
+
+.review {
+	z-index: 11;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	margin-top: -400px;
+	max-width: 100%;
+	min-width: 300px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+#padding {
+	padding-top: 20%;
+}
+
+.review-card {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+}
+
+.img-review {
+	max-width: 60%;
+	min-width: 300px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.text-review {
+	justify-content: center;
+	flex-direction: row;
+	max-width: 40%;
+	min-width: 300px;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	align-items: center;
+	align-content: center;
+
+}
+
+.text-review h2 {
+	text-align: center;
+	color: black;
+	font-weight: lighter;
+	font-family: 'Molodo-font';
+	font-size: (100vh + 100vw)*3;
+}
+
+/* ****************************************** */
+
+[data-tooltip] {
+    position: relative; 
+}
+
+[data-tooltip] p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+[data-tooltip]::after {
+    z-index: 100;
+    content: attr(data-tooltip); 
+    position: absolute; 
+    width: 200px; 
+    left: 0; top: 0; 
+    background: white; 
+    color: black; 
+    padding: 0.5em; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: 1s; 
+} 
+
+[data-tooltip]:hover::after {
+    opacity: 1; 
+    top: 2em; 
+}

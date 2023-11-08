@@ -1,0 +1,165 @@
+body {
+    background-color: whitesmoke;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.title p {
+    font-size: 100%;
+    margin: 0 auto;
+    max-width: 33%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.title h2 {
+    font-size: 400%;
+    text-align: center;
+    font-family: "Molodo-font"; 
+    font-weight: normal;
+}
+
+@font-face {
+	font-family: "Oglavie Unicode"; 
+	src: url("./fonts/oglavieunicode.ttf"); 
+} 
+
+.treba {
+    margin: 0 auto;
+    position: relative;
+    max-width: 700px;
+    min-width: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-treba {
+    margin: 10px; 
+    background-color: white;
+    aspect-ratio: 1 / 1;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.card-treba h2 {
+    text-align: center;
+}
+
+.name {
+    font-size: 125%;
+    font-weight: normal;
+    font-family: 'Molodo-font';
+}
+
+@font-face {
+	font-family: "Molodo-font"; 
+	src: url("/fonts/Molodost.ttf"); 
+}
+
+.price {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    font-size: 150%;
+}
+
+.caption {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.caption {
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.caption button {
+    background-color: transparent;
+    border: transparent;
+}
+
+.caption button:hover {
+    opacity: 0.5;
+    scale: 1.1;
+}
+
+.caption p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+#toCopy1, #toCopy2, #toCopy3, #toCopy4, #toCopy5, #toCopy6  {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+.FAQ {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 700px;
+    margin-bottom: 10%;
+}
+
+.FAQ details {
+    margin: 2.5%;
+}
+
+.FAQ details summary {
+    text-align: center;
+    font-size: 125%;
+    font-weight: normal;
+    font-family: 'Molodo-font';
+}
+
+.FAQ details li {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+/* ****** */
+
+[data-tooltip] {
+    position: relative; 
+}
+
+[data-tooltip] p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+
+[data-tooltip]::after {
+    z-index: 100;
+    content: attr(data-tooltip); 
+    position: absolute; /* Абсолютное позиционирование */
+    width: 100%; /* Ширина подсказки */
+    left: 0; top: 0; /* Положение подсказки */
+    background: white; /* Синий цвет фона */
+    color: black; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+   } 
+
+[data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    top: 2em; /* Положение подсказки */
+}
+
+
+
+/* ************************************************ */
